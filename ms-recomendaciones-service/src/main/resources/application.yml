@@ -1,0 +1,56 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: recomendaciones-service
+
+  # Deshabilitar Config Server y Eureka temporalmente
+  cloud:
+    config:
+      enabled: false
+      import-check:
+        enabled: false
+    discovery:
+      enabled: false
+
+  # Configuración PostgreSQL
+  datasource:
+    url: jdbc:postgresql://localhost:5432/peliculas_recomendaciones
+    username: recomendaciones_user
+    password: password123
+    driver-class-name: org.postgresql.Driver
+
+  # Configuración JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+# Eureka deshabilitado temporalmente
+eureka:
+  client:
+    enabled: false
+    fetch-registry: false
+    register-with-eureka: false
+
+# Actuator endpoints para monitoreo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Logging
+logging:
+  level:
+    com.peliculas.recomendaciones: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
