@@ -13,10 +13,10 @@
         },
         {
             "type": "java",
-            "name": "Spring Boot-EurekaServirApplication<eureka-server>",
+            "name": "Spring Boot-EurekaServerApplication<eureka-server>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.unir.eureka_servir.EurekaServirApplication",
+            "mainClass": "com.unir.eureka_server.EurekaServerApplication",
             "projectName": "eureka-server",
             "args": "",
             "envFile": "${workspaceFolder}/.env",
@@ -35,22 +35,42 @@
         },
         {
             "type": "java",
-            "name": "Spring Boot-RecomendacionesServiceApplication<recomendaciones-service>",
+            "name": "Spring Boot-MovieRecommendationApplication<ms-movie-recommendation>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.peliculas.recomendaciones.RecomendacionesServiceApplication",
-            "projectName": "recomendaciones-service",
+            "mainClass": "com.unir.recommendation.MovieRecommendationApplication",
+            "projectName": "ms-movie-recommendation",
             "args": "",
             "envFile": "${workspaceFolder}/.env",
-            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=62474 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=recomendaciones-service"
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=62474 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=ms-movie-recommendation"
         },
         {
             "type": "java",
-            "name": "Spring Boot-CatalogoApplication<backend>",
+            "name": "Spring Boot-MovieCatalogApplication<ms-movie-catalog>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.proyect1.movies.backend.CatalogoApplication",
-            "projectName": "backend",
+            "mainClass": "com.unir.catalog.MovieCatalogApplication",
+            "projectName": "ms-movie-catalog",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MovieCatalogApplication<catalog>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.unir.catalog.MovieCatalogApplication",
+            "projectName": "catalog",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MovieRecommendationApplication<recommendation>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.unir.recommendation.MovieRecommendationApplication",
+            "projectName": "recommendation",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
