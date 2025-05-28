@@ -1,5 +1,7 @@
 package com.unir.recommendation.service;
 
+import com.unir.recommendation.client.CatalogoFeignClient;
+import com.unir.recommendation.client.CatalogoFeignClient.PeliculaDTO;
 import com.unir.recommendation.dto.RecomendacionDTO;
 import com.unir.recommendation.model.Recomendacion;
 import com.unir.recommendation.repository.RecomendacionRepository;
@@ -18,7 +20,14 @@ public class RecomendacionService {
     @Autowired
     private RecomendacionRepository recomendacionRepository;
 
+    @Autowired
+    private CatalogoFeignClient catalogoFeignClient;
+
     // CRUD Operations
+
+    public PeliculaDTO getMovieById(Long id) {
+        return catalogoFeignClient.obtenerPeliculaPorId(id);
+    }
 
     public List<RecomendacionDTO> obtenerTodasLasRecomendaciones() {
         return recomendacionRepository.findAll()

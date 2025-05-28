@@ -1,5 +1,6 @@
 package com.unir.recommendation.controller;
 
+import com.unir.recommendation.client.CatalogoFeignClient.PeliculaDTO;
 import com.unir.recommendation.dto.RecomendacionDTO;
 import com.unir.recommendation.service.RecomendacionService;
 import jakarta.validation.Valid;
@@ -78,6 +79,12 @@ public class RecomendacionController {
     public ResponseEntity<List<RecomendacionDTO>> obtenerRecomendacionesPorPelicula(@PathVariable Long peliculaId) {
         List<RecomendacionDTO> recomendaciones = recomendacionService.obtenerRecomendacionesPorPelicula(peliculaId);
         return ResponseEntity.ok(recomendaciones);
+    }
+    // Buscar por película ID
+    @GetMapping("/movie/{peliculaId}")
+    public ResponseEntity<PeliculaDTO> getByFromMSCatalog(@PathVariable Long peliculaId) {
+        PeliculaDTO movie = recomendacionService.getMovieById(peliculaId);
+        return ResponseEntity.ok(movie);
     }
 
     // Obtener recomendaciones no visualizadas por usuario
