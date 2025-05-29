@@ -28,6 +28,7 @@ public class MovieController {
         this.movieService = movieService;
     }
 
+     // GET - Traer pelicula por id
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse> getMovieById(@PathVariable Long id) {
         Movie movie = movieService.getMovieById(id)
@@ -36,6 +37,7 @@ public class MovieController {
         return ResponseEntity.ok(new ApiResponse(true, "Película encontrada", movie));
     }
 
+    // GET - Traer peliculas
     @GetMapping
     public List<Movie> getMovie() {
         return movieService.getMovies();
@@ -51,6 +53,7 @@ public class MovieController {
                 "data", created));
     }
 
+    // PUT - Update nueva película
     @PutMapping("/{id}")
     public ResponseEntity<?> updateMovie(@PathVariable Long id,
             @RequestBody MovieUpdateRequest updateRequest) {
