@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "48985955-d738-4f35-a530-89ec7604944b",
+		"name": "Microservicio Recomendaciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45285946",
+		"_collection_link": "https://andresgomez-1910358.postman.co/workspace/Andres-Gomez's-Workspace~2f527b98-5160-4f6c-899b-2fbd44e42724/collection/45285946-48985955-d738-4f35-a530-89ec7604944b?action=share&source=collection_link&creator=45285946"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Todas las recomendaciones",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener recomendación por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{api_path}}/movie/?id=1",
+					"host": [
+						"{{base_url}}{{api_path}}"
+					],
+					"path": [
+						"movie",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear recomendación",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{api_path}}",
+					"host": [
+						"{{base_url}}{{api_path}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar recomendación",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"usuarioId\": 1,\n    \"peliculaId\": 102,\n    \"puntuacion\": 5.0,\n    \"comentario\": \"Actualización: Es una obra maestra absoluta\",\n    \"visualizada\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{api_path}}/{{recommendationId}}",
+					"host": [
+						"{{base_url}}{{api_path}}"
+					],
+					"path": [
+						"{{recommendationId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar recomendación",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"usuarioId\": 1,\n    \"peliculaId\": 102,\n    \"puntuacion\": 5.0,\n    \"comentario\": \"Actualización: Es una obra maestra absoluta\",\n    \"visualizada\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}{{api_path}}/?id=1",
+					"host": [
+						"{{base_url}}{{api_path}}"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener película del catálogo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}{{api_path_pelicula}}{{id_pelicula}}",
+					"host": [
+						"{{base_url}}{{api_path_pelicula}}{{id_pelicula}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": " http://localhost:8081",
+			"type": "string"
+		},
+		{
+			"key": "api_path",
+			"value": "/api/recommendation",
+			"type": "string"
+		},
+		{
+			"key": "recommendationId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "api_path_pelicula",
+			"value": "/api/catalog/",
+			"type": "string"
+		},
+		{
+			"key": "id_pelicula",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
