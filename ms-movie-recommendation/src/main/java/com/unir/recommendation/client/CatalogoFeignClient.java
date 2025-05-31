@@ -10,7 +10,7 @@ import lombok.Setter;
 @FeignClient(name = "ms-movie-catalog", fallback = CatalogoFeignClientFallback.class)
 public interface CatalogoFeignClient {
 
-    @GetMapping("/api/peliculas/{id}")
+    @GetMapping("/api/catalog/{id}")
     PeliculaDTO obtenerPeliculaPorId(@PathVariable("id") Long id);
 
     // DTO para recibir información de películas
