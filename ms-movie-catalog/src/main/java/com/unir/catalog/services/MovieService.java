@@ -48,6 +48,8 @@ public class MovieService implements IMovieService {
             movie.setDescription(updateRequest.getDescription());
         if (updateRequest.getImage() != null)
             movie.setImage(updateRequest.getImage());
+        if (updateRequest.getTrailer() != null)
+            movie.setTrailer(updateRequest.getTrailer());
 
         return movieDao.save(movie);
     }

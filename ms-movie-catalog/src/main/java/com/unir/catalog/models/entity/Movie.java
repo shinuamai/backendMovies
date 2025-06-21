@@ -25,6 +25,7 @@ public class Movie {
     private String author;
     private String description;
     private String image;
+    private String trailer;
     @CreationTimestamp
     @Column(
             name = "created_at",

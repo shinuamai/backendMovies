@@ -11,4 +11,5 @@ public class MovieUpdateRequest {
     private String author;
     private String description;
     private String image;
+    private String trailer;
 }
